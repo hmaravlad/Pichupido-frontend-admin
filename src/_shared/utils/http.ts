@@ -49,12 +49,8 @@ class Http {
   }
 
   public setAxios() {
-    this.token = JSON.parse(localStorage.getItem('token') || '{}');
     this.service = axios.create({
       baseURL: Environment.baseApiUrl,
-      headers: {
-        Authorization: `JWT ${this.token}`,
-      },
     });
   }
 }

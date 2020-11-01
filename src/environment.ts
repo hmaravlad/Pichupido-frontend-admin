@@ -1,7 +1,7 @@
 const LocalEnvironment: Environment = {
   clientUrl: 'http://localhost:8000',
   adminUrl: 'http://localhost:8081',
-  baseApiUrl: 'http://localhost:3000',
+  baseApiUrl: 'https://pichupido.herokuapp.com',
   stripePublicKey: 'pk_test_rq4QNJAOK1rRiWpnny8xzQfx00OAYfmtI5',
 };
 
