@@ -1,30 +1,38 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app">
+    <div id="scroll">
+      <router-view />
+    </div>
+    <modal-view v-on:open="open" v-on:close="close" />
+    <app-footer />
   </div>
-  <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import Footer from '@/_shared/components/footer.vue';
+
+@Component({
+  components: {
+    'app-footer': Footer,
+  },
+})
+export default class App extends Vue {
+    open = () => {
+      console.log('aaaa');
+      document.body.classList.add('scroll-in-body');
+    };
+
+    close = () => {
+      document.body.classList.remove('scroll-in-body');
+    };
 }
+</script>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+<style lang="sass">
+  @import "_sass/app"
+  .scroll-in-body
+    overflow: hidden
+  .no-scroll-in-body
+    overflow: auto
 </style>

@@ -1,4 +1,4 @@
-# pichupido-admin
+# pichupido-frontend
 
 ## Project setup
 ```
